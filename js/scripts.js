@@ -31,32 +31,42 @@ var sections = [
 ];
 
 // Build the list of selectable sections
-numSections = sections.length;
+var numSections = sections.length;
+var n;
 for (n=0; n<numSections; n++) {
-	option = sections[n];
+	var option = sections[n];
 	$('select').append('<option value="' + option + '">' + option + '</option>');
-};
+}
 
 $('#selection').on('change', function() {
 	var selection = $('#selection').val(); // Get the user's section selection
 	selection = selection.replace(/\s+/g, ''); // Remove spaces so it'll work in the URL
 	console.log('Received a section selection: ' + selection);
-	var APIKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
-	var URL = 'https://api.nytimes.com/svc/topstories/v2/' + selection + '.json?api-key=' + APIKey; // Build a keyed API URL for the selected section
-	console.log('Generated keyed URL:' + URL);
+	var apiKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
+	var apiUrl = 'https://api.nytimes.com/svc/topstories/v2/' + selection + '.json?api-key=' + apiKey; // Build a keyed API URL for the selected section
+	console.log('Generated keyed URL:' + apiUrl);
 	console.log('Fetching JSON object...');
 
 
-
 	$.ajax({
-		url: URL,
+		url: apiUrl,
 		method: 'GET',
 
-	}).done(function(result) {
-		console.log(result);
+	}).done(function(data) {
+		console.log(data);
+
+		for (n=0; n<12; n++) {
+			var articleTitle = data.results[n].title;
+			var articleAbstract = data.results[n].abstract;
+			var articleByline = data.results[n].byline;
+			var articleUrl = data.results[n].url;
+			var articleImage = data.results[n].multimedia[4].url;
+			$('article').append('<section style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>'	+ articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></section>');
+		}
 
 	}).fail(function() {
 		$('header').append('<p class="error">Error</p>')
+		$('.error').fadeOut(900);
 	});
 
 });

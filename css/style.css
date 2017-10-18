@@ -12,6 +12,25 @@
 		color: #f00;
 	}
 
+	section {
+		width: 100%;
+		height: 85vh;
+		background-size: cover;
+	}
+
+	.overlay {
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	.byline {
+		font-size: .75rem;
+	}
+
+	h2 {
+		font-weight: 300;
+		font-size: 1.2rem;
+	}
+
 	/* end basic selectors */
 /* splash */
 
