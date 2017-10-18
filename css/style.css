@@ -1,16 +1,47 @@
-/* general elements */
+/* basic selectors */
 
 	body {
-		font-family: sans-serif;
-		color: #2d2d2d;
-		font-size: 14px;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		color: #fff;
+		font-size: 16px;
+		background-color: #000;
 	}
 
-	/* end general elements */
-/* general classes */
+	/* end basic selectors */
+/* splash */
 
-	
-	/* end general classes */
+	header {
+		width: 100%;
+		height: 85vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	label {
+		padding: 15px;
+	}
+
+	select {
+		text-transform: capitalize;
+	}
+
+	footer {
+		color: #c2c2c2;
+		text-align: center;
+	}
+
+	/* end splash */
 /* media query - tablet */
 
 	@media all and (min-width: 1240px) {
