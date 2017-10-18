@@ -51,10 +51,12 @@ $('#selection').on('change', function() {
 	$.ajax({
 		url: URL,
 		method: 'GET',
+
 	}).done(function(result) {
 		console.log(result);
-	}).fail(function(err) {
-		throw err;
+
+	}).fail(function() {
+		$('header').append('<p class="error">Error</p>')
 	});
 
 });

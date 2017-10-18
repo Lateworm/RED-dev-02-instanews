@@ -1,0 +1,24 @@
+{
+  "name": "02_instanews-app",
+  "version": "1.0.0",
+  "description": "Pull news from the NYT API",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lateworm/RED-dev-02-instanews.git"
+  },
+  "author": "Lateworm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lateworm/RED-dev-02-instanews/issues"
+  },
+  "homepage": "https://github.com/Lateworm/RED-dev-02-instanews#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}

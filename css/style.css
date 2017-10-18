@@ -8,6 +8,10 @@
 		background-color: #000;
 	}
 
+	.error {
+		color: #f00;
+	}
+
 	/* end basic selectors */
 /* splash */
 
