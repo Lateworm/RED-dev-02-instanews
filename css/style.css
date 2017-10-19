@@ -101,7 +101,7 @@
 	/* end media query - tablet */
 /* media query - desktop */
 
-	@media all and (min-width: 1240px) {
+	@media all and (min-width: 1000px) {
 
 		article a {
 			width: 25%;
