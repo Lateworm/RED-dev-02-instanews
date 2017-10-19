@@ -30,6 +30,7 @@ var sections = [
 'world',
 ];
 
+
 // Build the list of selectable sections
 var numSections = sections.length;
 var n;
@@ -61,7 +62,7 @@ $('#selection').on('change', function() {
 			var articleByline = data.results[n].byline;
 			var articleUrl = data.results[n].url;
 			var articleImage = data.results[n].multimedia[4].url;
-			$('article').append('<section style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>'	+ articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></section>');
+			$('article').append('<a href="' + articleUrl + ''"><section style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>'	+ articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></section></a>');
 		}
 
 	}).fail(function() {
