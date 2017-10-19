@@ -403,7 +403,7 @@ body {
 .error {
   color: #f00; }
 
-header {
+.header-initial {
   width: 100%;
   height: 85vh;
   display: -webkit-box;
@@ -419,6 +419,51 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  @media (min-width: 600px) {
+    .header-initial {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto; } }
+
+.header-loaded {
+  width: 100%;
+  height: 55vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  @media (min-width: 600px) {
+    .header-loaded {
+      height: 150px;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto; } }
+
+.logo {
+  max-height: 85%; }
 
 form {
   display: -webkit-box;
