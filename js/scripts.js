@@ -42,7 +42,7 @@ for (n=0; n<numSections; n++) {
 $('#selection').on('change', function() {
 	var selection = $('#selection').val(); // Get the user's section selection
 	selection = selection.replace(/\s+/g, ''); // Remove spaces so it'll work in the URL
-	console.log('Received a section selection: ' + selection);
+	// console.log('Received a section selection: ' + selection);
 	var apiKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
 	var apiUrl = 'https://api.nytimes.com/svc/topstories/v2/' + selection + '.json?api-key=' + apiKey; // Build a keyed API URL for the selected section
 	console.log('Generated keyed URL:' + apiUrl);
@@ -62,7 +62,7 @@ $('#selection').on('change', function() {
 			var articleByline = data.results[n].byline;
 			var articleUrl = data.results[n].url;
 			var articleImage = data.results[n].multimedia[4].url;
-			$('article').append('<a href="' + articleUrl + '"><section style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>'	+ articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></section></a>');
+			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + n + ': ' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
 		}
 
 	}).fail(function() {
