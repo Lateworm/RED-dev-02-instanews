@@ -5,11 +5,16 @@ var uglify 			= require('gulp-uglify'),
 		rename 			= require('gulp-rename'),
 		gulp   			= require('gulp'),
 		browserSync = require('browser-sync').create(),
-		eslint			= require('gulp-eslint');
-
+		eslint			= require('gulp-eslint'),
+		// Sass
+		sass 				= require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+		cssnano 		= require('gulp-cssnano'),
+		prettyError = require('gulp-prettyerror');
 		
-gulp.task('watch', function() {
-   gulp.watch('js/*.js', ['buildScripts']);
+gulp.task('watch', function() {					// watch for files that need to be built/compiled
+	 gulp.watch('js/*.js', ['buildScripts']);
+	 gulp.watch('sass/*.scss', ['sass']);
 });		
 	
 gulp.task('lintScripts', function() {
@@ -35,6 +40,19 @@ gulp.task('browser-sync', function() {
 			});
 		gulp.watch(['index.html', 'build/css/*.css', 'js/*.js'])
 		.on('change', browserSync.reload);
+});
+	
+gulp.task('sass', function() {
+	 gulp.src('./sass/style.scss')
+	 		.pipe(prettyError()) // Sass error handler
+      .pipe(sass())
+      .pipe(autoprefixer({
+         browsers: ['last 2 versions']
+      }))
+      .pipe(gulp.dest('./build/css')) // helpful so we can see the compiled code
+      .pipe(cssnano())
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('./build/css')); // final production version
 });
 	
 // Modify our default task method by passing an array of task names
