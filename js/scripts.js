@@ -57,12 +57,13 @@ $('#selection').on('change', function() {
 		console.log(data);
 
 		for (n=0; n<12; n++) {
+			var o = n+1;
 			var articleTitle = data.results[n].title;
 			var articleAbstract = data.results[n].abstract;
 			var articleByline = data.results[n].byline;
 			var articleUrl = data.results[n].url;
 			var articleImage = data.results[n].multimedia[4].url;
-			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + n + ': ' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
+			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + o + ': ' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
 		}
 
 	}).fail(function() {

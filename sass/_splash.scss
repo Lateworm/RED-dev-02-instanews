@@ -1,0 +1,28 @@
+	header {
+		width: 100%;
+		height: 85vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	label {
+		padding: 15px;
+	}
+
+	select {
+		text-transform: capitalize;
+	}
+
+	footer {
+		color: #c2c2c2;
+		text-align: center;
+	}

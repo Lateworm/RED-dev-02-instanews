@@ -1,113 +1,55 @@
-/* basic selectors */
 
-	body {
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 300;
-		color: #fff;
-		font-size: 16px;
-		background-color: #000;
-	}
+article {
+	display: flex;
+	flex-direction: column;
+}
 
-	.error {
-		color: #f00;
-	}
-
-	/* end basic selectors */
-/* article */
-
-	article {
+article {
+	@include double {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
+}
 
-	article a {
-		text-decoration: none;
-		color: #fff;
-		width: 100%;
-		height: 85vh;
-		background-size: cover;
-		background-position: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
+article a {
+	text-decoration: none;
+	color: #fff;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	height: (100vw * $post-ratio);
+	@include double {
+		width: (100% / 2);
+		height: ((100vw / 2) * $post-ratio);
 	}
-
-	.overlay {
-		background-color: rgba(0,0,0,0.5);
-		padding-left: 8px;
-		padding-right: 8px;
+	@include tablet {
+		width: (100% / 3);
+		height: ((100vw / 3) * $post-ratio);
 	}
-
-	.byline {
-		font-size: .75rem;
+	@include desktop {
+		width: (100% / 4);
+		height: ((100vw / 4) * $post-ratio);
 	}
+}
 
-	h2 {
-		font-weight: 300;
-		font-size: 1.2rem;
-	}
+.overlay {
+	background-color: rgba(0,0,0,0.7);
+	padding-left: 8px;
+	padding-right: 8px;
+}
 
-	/* end article */
-/* splash */
+.byline {
+	font-size: .75rem;
+}
 
-	header {
-		width: 100%;
-		height: 85vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+h2 {
+	font-weight: 300;
+	font-size: 1.2rem;
+}
 
-	}
 
-	form {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
 
-	label {
-		padding: 15px;
-	}
-
-	select {
-		text-transform: capitalize;
-	}
-
-	footer {
-		color: #c2c2c2;
-		text-align: center;
-	}
-
-	/* end splash */
-/* media query - tablet */
-
-	@media all and (min-width: 600px) {
-
-		article {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-		}
-
-		article a {
-			width: 33.33%;
-			height: 50vw;
-		}
-
-	}
-
-	/* end media query - tablet */
-/* media query - desktop */
-
-	@media all and (min-width: 1000px) {
-
-		article a {
-			width: 25%;
-			height: 40vw;
-		}
-
-	}
-
-	/* end media query - desktop */

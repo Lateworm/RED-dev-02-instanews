@@ -1,1 +1,11 @@
-// styles used throughout the entire site
+	body {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		color: #fff;
+		font-size: 16px;
+		background-color: #000;
+	}
+
+	.error {
+		color: #f00;
+	}
