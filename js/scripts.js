@@ -54,7 +54,7 @@ $('#selection').on('change', function() {
 		method: 'GET',
 
 	}).done(function(data) {
-		console.log(data);
+		//console.log(data);
 		$('article').empty();
 
 		// try filtering the data before we begin looping
@@ -69,13 +69,14 @@ $('#selection').on('change', function() {
 		var q = 0;
 
 		for (n=0; n<12; n++) {
+
 			var articleMediaLength = data.results[p+1].multimedia.length;
 			if (articleMediaLength === 0) {
-				console.log('no media available in .results['+ (p+1) +']');
+				//console.log('no media available in .results['+ (p+1) +']');
 				q++;
 			}
 			p = n + q;
-			console.log('n('+n+') + q('+q+') = p('+p+')')
+			//console.log('n('+n+') + q('+q+') = p('+p+')')
 
 			var articleTitle = data.results[p].title;
 			var articleAbstract = data.results[p].abstract;
@@ -83,7 +84,7 @@ $('#selection').on('change', function() {
 			var articleUrl = data.results[p].url;
 			var articleImage = data.results[p].multimedia[4].url;
 			$('header').removeClass('header-initial').addClass('header-loaded');
-			console.log('appening info from .results[p'+p+']')
+			//console.log('appening info from .results['+p+']')
 			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
 		}
 
