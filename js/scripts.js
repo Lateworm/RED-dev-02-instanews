@@ -58,48 +58,32 @@ $('#selection').on('change', function() {
 		$('article').empty();
 
 		// try filtering the data before we begin looping
+		// var data = rawData.results; // this can be used to refine the dataset
 		// hints: .fiter() and .slice()
-		// var articleMediaLength = rawData.results[n].multimedia.length;
-		// console.log(articleMediaLength);
-		// var data = rawData.results;
 
 		// $.each(data, function(index, value) {
-		// 	var articleTitle = data.title;
-		// 	console.log(articleTitle);
+		// 	var example = 'each loop';
 		// });
 
 		
 
 
 		for (n=0; n<12; n++) {
-
 			var o = n+1;
 			var p = n;
-
 			var articleMediaLength = data.results[p].multimedia.length;
-	
-						
-
 			if (articleMediaLength === 0) {
 				console.log('no media available for '+ n + 'th story');
 				p++;
 			} 
-
 			var articleTitle = data.results[p].title;
 			var articleAbstract = data.results[p].abstract;
 			var articleByline = data.results[p].byline;
 			var articleUrl = data.results[p].url;
 			var articleImage = data.results[p].multimedia[4].url;
-
 			$('header').removeClass('header-initial').addClass('header-loaded');
 			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + o + ': ' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
-
 		}
-
-
-
-
-
 
 	}).fail(function() {
 		$('header').append('<p class="error">Error</p>')

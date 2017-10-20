@@ -2,8 +2,6 @@
 RED Academy Web Development Project 02
 
 ## Dev Tasks
-- Check if image is present before posting
-- Empty <article> whenever a new selection is subitted
 - Get the layout as close as possible to to comps
 - Set up a loading circle using ajax-loader.gif
 - Improve error message
