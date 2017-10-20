@@ -4,7 +4,6 @@ RED Academy Web Development Project 02
 ## Dev Tasks
 - Get the layout as close as possible to to comps
 - Set up a loading circle using ajax-loader.gif
-- Improve error message
 - Remove useless CSS files
 - Test cross-browser
 - Validate using W3C validators
