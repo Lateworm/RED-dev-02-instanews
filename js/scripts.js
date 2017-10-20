@@ -54,7 +54,7 @@ $('#selection').on('change', function() {
 		method: 'GET',
 
 	}).done(function(data) {
-		// console.log(rawData);
+		console.log(data);
 		$('article').empty();
 
 		// try filtering the data before we begin looping
@@ -65,21 +65,26 @@ $('#selection').on('change', function() {
 		// 	var example = 'each loop';
 		// });
 
+		var p = 0;
+		var q = 0;
+
 		for (n=0; n<12; n++) {
-			var o = n+1;
-			var p = n;
-			var articleMediaLength = data.results[p].multimedia.length;
+			var articleMediaLength = data.results[p+1].multimedia.length;
 			if (articleMediaLength === 0) {
-				console.log('no media available for '+ n + 'th story');
-				p++;
-			} 
+				console.log('no media available in .results['+ (p+1) +']');
+				q++;
+			}
+			p = n + q;
+			console.log('n('+n+') + q('+q+') = p('+p+')')
+
 			var articleTitle = data.results[p].title;
 			var articleAbstract = data.results[p].abstract;
 			var articleByline = data.results[p].byline;
 			var articleUrl = data.results[p].url;
 			var articleImage = data.results[p].multimedia[4].url;
 			$('header').removeClass('header-initial').addClass('header-loaded');
-			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + o + ': ' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
+			console.log('appening info from .results[p'+p+']')
+			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
 		}
 
 	}).fail(function() {
@@ -89,10 +94,3 @@ $('#selection').on('change', function() {
 	});
 
 });
-
-//
-setTimeout(fade_out, 5000);
-
-function fade_out() {
-  $("#mydiv").fadeOut().empty();
-}
