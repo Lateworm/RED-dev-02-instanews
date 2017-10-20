@@ -74,12 +74,22 @@ $('#selection').on('change', function() {
 		for (n=0; n<12; n++) {
 
 			var o = n+1;
-			var articleTitle = data.results[n].title;
-			var articleAbstract = data.results[n].abstract;
-			var articleByline = data.results[n].byline;
-			var articleUrl = data.results[n].url;
-			//var articleMediaLength = data.results[n].multimedia.length;
-			var articleImage = data.results[n].multimedia[4].url;
+			var p = n;
+
+			var articleMediaLength = data.results[p].multimedia.length;
+	
+						
+
+			if (articleMediaLength === 0) {
+				console.log('no media available for '+ n + 'th story');
+				p++;
+			} 
+
+			var articleTitle = data.results[p].title;
+			var articleAbstract = data.results[p].abstract;
+			var articleByline = data.results[p].byline;
+			var articleUrl = data.results[p].url;
+			var articleImage = data.results[p].multimedia[4].url;
 
 			$('header').removeClass('header-initial').addClass('header-loaded');
 			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + o + ': ' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
