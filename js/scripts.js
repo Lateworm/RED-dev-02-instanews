@@ -65,9 +65,6 @@ $('#selection').on('change', function() {
 		// 	var example = 'each loop';
 		// });
 
-		
-
-
 		for (n=0; n<12; n++) {
 			var o = n+1;
 			var p = n;
@@ -86,10 +83,16 @@ $('#selection').on('change', function() {
 		}
 
 	}).fail(function() {
-		$('header').append('<p class="error">Error</p>')
-		$('.error').fadeOut(900);
+		$('label').text('Error').addClass('error');
+		setTimeout(function () {
+			$('label').removeClass('error').text('Choose a section'); }, 3000);
 	});
 
 });
 
+//
+setTimeout(fade_out, 5000);
 
+function fade_out() {
+  $("#mydiv").fadeOut().empty();
+}

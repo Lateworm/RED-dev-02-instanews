@@ -401,7 +401,8 @@ body {
   background-color: #000; }
 
 .error {
-  color: #f00; }
+  color: #f00;
+  text-transform: uppercase; }
 
 .header-initial {
   width: 100%;
