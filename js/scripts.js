@@ -42,7 +42,6 @@ for (n=0; n<numSections; n++) {
 $('#selection').on('change', function() {
 	var selection = $('#selection').val(); // Get the user's section selection
 	selection = selection.replace(/\s+/g, ''); // Remove spaces so it'll work in the URL
-	// console.log('Received a section selection: ' + selection);
 	var apiKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
 	var apiUrl = 'https://api.nytimes.com/svc/topstories/v2/' + selection + '.json?api-key=' + apiKey; // Build a keyed API URL for the selected section
 	// console.log('Generated keyed URL:' + apiUrl);
@@ -54,39 +53,33 @@ $('#selection').on('change', function() {
 		method: 'GET',
 
 	}).done(function(data) {
-		//console.log(data);
+		// console.log(data);
 		$('article').empty();
 
-		// try filtering the data before we begin looping
-		// var data = rawData.results; // this can be used to refine the dataset
-		// hints: .fiter() and .slice()
+		var anchorsAppended = 0;
+		$.each(data.results, function(each) {
 
-		// $.each(data, function(index, value) {
-		// 	var example = 'each loop';
-		// });
-
-		var p = 0;
-		var q = 0;
-
-		for (n=0; n<12; n++) {
-
-			var articleMediaLength = data.results[p+1].multimedia.length;
+			var articleMediaLength = data.results[each].multimedia.length;
 			if (articleMediaLength === 0) {
-				//console.log('no media available in .results['+ (p+1) +']');
-				q++;
+				// console.log('No image available in results['+(each)+']')
+				return true;
 			}
-			p = n + q;
-			//console.log('n('+n+') + q('+q+') = p('+p+')')
 
-			var articleTitle = data.results[p].title;
-			var articleAbstract = data.results[p].abstract;
-			var articleByline = data.results[p].byline;
-			var articleUrl = data.results[p].url;
-			var articleImage = data.results[p].multimedia[4].url;
-			$('header').removeClass('header-initial').addClass('header-loaded');
-			//console.log('appening info from .results['+p+']')
-			$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
-		}
+			anchorsAppended++;
+
+			if (anchorsAppended <= 12) {
+				// console.log('Appending anchor '+anchorsAppended+' from .results['+each+']...');
+				var articleTitle = data.results[each].title;
+				var articleAbstract = data.results[each].abstract;
+				var articleByline = data.results[each].byline;
+				var articleUrl = data.results[each].url;
+				var articleImage = data.results[each].multimedia[4].url; // [4] = hi-rez, [3] = lo-rez
+				$('header').removeClass('header-initial').addClass('header-loaded');
+				$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
+			}
+			
+			return (anchorsAppended !== 12);
+		})
 
 	}).fail(function() {
 		$('label').text('Error').addClass('error');
