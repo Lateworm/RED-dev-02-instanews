@@ -1,6 +1,16 @@
 //jQuery document ready function
 // $(function() { stuff and junk });
 
+// Show the overlay on mouseover
+
+$('.post').on('mouseover', function() {
+	$(this).children().toggleClass('toggle-height');
+	console.log('mouseover');
+});
+$('.post').on('mouseout', function() {
+	$(this).children().toggleClass('toggle-height');
+});
+
 var sections = [
 'home',
 'arts',
@@ -30,7 +40,6 @@ var sections = [
 'world',
 ];
 
-
 // Build the list of selectable sections
 var numSections = sections.length;
 var n = 5;
@@ -44,9 +53,8 @@ $('#selection').on('change', function() {
 	selection = selection.replace(/\s+/g, ''); // Remove spaces so it'll work in the URL
 	var apiKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
 	var apiUrl = 'https://api.nytimes.com/svc/topstories/v2/' + selection + '.json?api-key=' + apiKey; // Build a keyed API URL for the selected section
-	// console.log('Generated keyed URL:' + apiUrl);
-	// console.log('Fetching JSON object...');
 
+	// Pull the API info
 
 	$.ajax({
 		url: apiUrl,
@@ -61,12 +69,9 @@ $('#selection').on('change', function() {
 
 			var articleMediaLength = data.results[each].multimedia.length;
 			if (articleMediaLength === 0) {
-				// console.log('No image available in results['+(each)+']')
 				return true;
 			}
-
 			anchorsAppended++;
-
 			if (anchorsAppended <= 12) {
 				// console.log('Appending anchor '+anchorsAppended+' from .results['+each+']...');
 				var articleTitle = data.results[each].title;
@@ -75,16 +80,13 @@ $('#selection').on('change', function() {
 				var articleUrl = data.results[each].url;
 				var articleImage = data.results[each].multimedia[4].url; // [4] = hi-rez, [3] = lo-rez
 				$('header').removeClass('header-initial').addClass('header-loaded');
-				$('article').append('<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay"><h2>' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
+				$('article').append('<a class="post" href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay toggle-height"><h2>' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
 			}
-			
 			return (anchorsAppended !== 12);
 		})
-
 	}).fail(function() {
 		$('label').text('Error').addClass('error');
 		setTimeout(function () {
 			$('label').removeClass('error').text('Choose a section'); }, 3000);
 	});
-
 });
