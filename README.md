@@ -2,10 +2,10 @@
 RED Academy Web Development Project 02
 
 ## Dev Tasks
-- Get the layout as close as possible to to comps
+- Refine the layout to get it as close as possible to to comps
+- The logo and chooser seems to shift again on the second load.
 - Set up a loading circle using ajax-loader.gif
 - Test cross-browser
-- Stop the each loop from running after the 12th post
 - Incorporate a <select> field with custom styles applied (you will need a jQuery plugin for this such as Selectric)
 - Incorporate a combination of jQuery and CSS3-based animation to animate the movement of the header on the <select> change
 - Use CSS3 transitions to show and hide the article abstract on hover
