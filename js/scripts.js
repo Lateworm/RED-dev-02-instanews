@@ -80,7 +80,12 @@ $('#selection').on('change', function() {
 				var articleUrl = data.results[each].url;
 				var articleImage = data.results[each].multimedia[4].url; // [4] = hi-rez, [3] = lo-rez
 				$('header').removeClass('header-initial').addClass('header-loaded');
-				$('article').append('<a class="post" href="' + articleUrl + '" style="background-image: url(' + articleImage + ');"><div class="overlay toggle-height"><h2>' + articleTitle + '</h2><p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p></div></a>');
+				var post = '<a class="post" href="' + articleUrl + '" style="background-image: url(' + articleImage + ');">';
+				post += '<div class="overlay toggle-height">';
+				post += '<h2>' + articleTitle + '</h2>';
+				post += '<p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p>';
+				post += '</div></a>';
+				$('article').append(post);
 			}
 			return (anchorsAppended !== 12);
 		})

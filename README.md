@@ -9,7 +9,6 @@ RED Academy Web Development Project 02
 - Incorporate a <select> field with custom styles applied (you will need a jQuery plugin for this such as Selectric)
 - Incorporate a combination of jQuery and CSS3-based animation to animate the movement of the header on the <select> change
 - Use CSS3 transitions to show and hide the article abstract on hover
-- consider using var += to make centent generation in js more readable
 - Switch to full Sass syntax
 
 ## Project Notes
