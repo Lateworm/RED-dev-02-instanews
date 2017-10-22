@@ -404,6 +404,10 @@ body {
   color: #f00;
   text-transform: uppercase; }
 
+header {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
+
 .header-initial {
   width: 100%;
   height: 85vh;
@@ -545,7 +549,14 @@ article a {
 .overlay {
   background-color: rgba(0, 0, 0, 0.7);
   padding-left: 8px;
-  padding-right: 8px; }
+  padding-right: 8px;
+  overflow: hidden;
+  height: 0px;
+  -webkit-transition: height 1s;
+  transition: height 1s; }
+
+.toggle-height {
+  height: 33.34%; }
 
 .byline {
   font-size: .75rem; }

@@ -40,6 +40,12 @@ article a {
 	background-color: rgba(0,0,0,0.7);
 	padding-left: 8px;
 	padding-right: 8px;
+	overflow: hidden;
+	height: 0px;
+	transition: height 1s;
+}
+.toggle-height {
+	height: 33.34%;
 }
 
 .byline {
