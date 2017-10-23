@@ -5,31 +5,31 @@ $(function() {
 	$('.error').hide();
 
 	var sections = [
-	'home',
+	// 'home',
 	'arts',
 	'automobiles',
 	'books',
-	'business',
+	// 'business',
 	'fashion',
 	'food',
-	'health',
-	'insider',
-	'magazine',
+	// 'health',
+	// 'insider',
+	// 'magazine',
 	'movies',
-	'national',
-	'ny region',
-	'obituaries',
-	'opinion',
-	'politics',
-	'real estate',
+	// 'national',
+	// 'ny region',
+	// 'obituaries',
+	// 'opinion',
+	// 'politics',
+	// 'real estate',
 	'science',
-	'sports',
-	'sunday review',
-	't magazine',
+	// 'sports',
+	// 'sunday review',
+	// 't magazine',
 	'technology',
 	'theater',
 	'travel',
-	'upshot',
+	// 'upshot',
 	'world',
 	];
 
@@ -70,21 +70,19 @@ $(function() {
 				}
 				anchorsAppended++;
 				if (anchorsAppended <= 12) {
-					// console.log('Appending anchor '+anchorsAppended+' from .results['+each+']...');
 					var articleTitle = data.results[each].title;
 					var articleAbstract = data.results[each].abstract;
-					// var articleByline = data.results[each].byline;
+					var articleByline = data.results[each].byline;
 					var articleUrl = data.results[each].url;
 					var articleImage = data.results[each].multimedia[articleMediaIndex].url; // use the best available media
-					$('header').removeClass('header-initial').addClass('header-loaded');
+					$('header').addClass('header-loaded');
 					var post = '<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');">';
 					post += '<div class="overlay">';
 					post += '<h2>' + articleTitle + '</h2>';
 					post += '<p>' + articleAbstract + '</p>';
-					// post += '<p class="byline">' + articleByline + '</p>';
+					post += '<p class="byline">' + articleByline + '</p>';
 					post += '</div></a>';
 					$('article').append(post);
-					// $('article').append('<p>This is a paragraph added via jQuery</p>');
 				}
 
 				return (anchorsAppended <= 12);
@@ -103,11 +101,11 @@ $(function() {
 	function addListener(){
 	$('article').children().on('mouseover', function(e) {
 		e.preventDefault();
-		$(this).children().toggleClass('toggle-height');
+		$(this).children().children().toggleClass('toggle-height');
 	});
 	$('article').children().on('mouseout', function(e) {
 		e.preventDefault();
-		$(this).children().toggleClass('toggle-height');
+		$(this).children().children().toggleClass('toggle-height');
 	});
 
 	}
