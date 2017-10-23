@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h3, h4, h5, h6, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -145,7 +145,8 @@ select {
 
 footer {
   color: #c2c2c2;
-  text-align: center; }
+  text-align: center;
+  min-height: 30px; }
 
 article {
   display: -webkit-box;

@@ -1,16 +1,6 @@
 //jQuery document ready function
 // $(function() { stuff and junk });
 
-// Show the overlay on mouseover
-
-$('.post').on('mouseover', function() {
-	$(this).children().toggleClass('toggle-height');
-	console.log('mouseover');
-});
-$('.post').on('mouseout', function() {
-	$(this).children().toggleClass('toggle-height');
-});
-
 var sections = [
 'home',
 'arts',
@@ -51,7 +41,7 @@ for (n=0; n<numSections; n++) {
 
 
 $('#selection').on('change', function() {
-	$('article').empty();
+	// $('article').empty();
 	// Construct the loading spinner
 	var load = '<div class="loading"><img src="img/loading_trans_75px.gif" alt="Loading" /></div>';
 	$('article').append(load);
@@ -82,16 +72,18 @@ $('#selection').on('change', function() {
 				// console.log('Appending anchor '+anchorsAppended+' from .results['+each+']...');
 				var articleTitle = data.results[each].title;
 				var articleAbstract = data.results[each].abstract;
-				var articleByline = data.results[each].byline;
+				// var articleByline = data.results[each].byline;
 				var articleUrl = data.results[each].url;
 				var articleImage = data.results[each].multimedia[4].url; // [4] = hi-rez, [3] = lo-rez
 				$('header').removeClass('header-initial').addClass('header-loaded');
-				var post = '<a class="post" href="' + articleUrl + '" style="background-image: url(' + articleImage + ');">';
-				post += '<div class="overlay toggle-height">';
+				var post = '<a href="' + articleUrl + '" style="background-image: url(' + articleImage + ');">';
+				post += '<div class="overlay">';
 				post += '<h2>' + articleTitle + '</h2>';
-				post += '<p>' + articleAbstract + '</p><p class="byline">' + articleByline + '</p>';
+				post += '<p>' + articleAbstract + '</p>';
+				// post += '<p class="byline">' + articleByline + '</p>';
 				post += '</div></a>';
-				$('article').append(post);
+				// $('article').append(post);
+				$('article').append('<p>This is a paragraph added via jQuery</p>');
 			}
 			return (anchorsAppended !== 12);
 		})
@@ -100,4 +92,16 @@ $('#selection').on('change', function() {
 		setTimeout(function () {
 			$('label').removeClass('error').text('Choose a section'); }, 3000);
 	});
+});
+
+// Show the overlay on mouseover
+
+$('article').children().on('mouseover', function(e) {
+	e.preventDefault();
+	$(this).children().toggleClass('toggle-height');
+	console.log('mouseover');
+});
+$('article').children().on('mouseout', function(e) {
+	e.preventDefault();
+	$(this).children().toggleClass('toggle-height');
 });
