@@ -10,8 +10,6 @@ I mean, in writing, this feature has been implemented. It just doesn't look very
 I've built the site using both Eric Meyer's CSS Reset and Normalize.css. Eric Meyer's is attractive because it's much shorter, however it's annoying because it resets margin and padding on headings and paragraphs, and for this project the standard margins here worked well. I've removed mention of h2 and p from the reset file because this was the easiest way to fix the problem, but ultimately I should switch back to Normalize or add some more rules about these elements.
 
 ### Miscellaneous
-- Refine the layout to get it as close as possible to to comps.
-- The logo and chooser seems to shift again on the second load.
 - Test cross-browser.
 - Incorporate a <select> field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
 - Re-export the loading spinner with anti-aliasing.
