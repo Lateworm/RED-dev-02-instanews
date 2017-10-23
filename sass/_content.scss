@@ -2,9 +2,6 @@
 article {
 	display: flex;
 	flex-direction: column;
-}
-
-article {
 	@include double {
 		display: flex;
 		flex-direction: row;
@@ -40,18 +37,21 @@ article a {
 	background-color: rgba(0,0,0,0.7);
 	padding-left: 8px;
 	padding-right: 8px;
-	overflow: hidden;
-	height: 0px;
 	transition: height 1s cubic-bezier(0, 0.5, 0.5, 1);
-
 }
-.toggle-height {
-	height: 50%;
+
+.overlay p {
+	display: none;
+}
+
+.overlay .toggle-height {
+	display: block;
 }
 
 .byline {
 	font-size: .75rem;
 }
+
 
 h2 {
 	font-weight: 300;
