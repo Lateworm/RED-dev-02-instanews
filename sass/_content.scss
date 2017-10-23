@@ -42,10 +42,11 @@ article a {
 	padding-right: 8px;
 	overflow: hidden;
 	height: 0px;
-	transition: height 1s;
+	transition: height 1s cubic-bezier(0, 0.5, 0.5, 1);
+
 }
 .toggle-height {
-	height: 33.34%;
+	height: 50%;
 }
 
 .byline {
@@ -55,14 +56,6 @@ article a {
 h2 {
 	font-weight: 300;
 	font-size: 1.2rem;
-}
-
-.loading {
-	display: flex;
-	width: 100vw;
-	justify-content: center;
-	align-items: center;
-
 }
 
 

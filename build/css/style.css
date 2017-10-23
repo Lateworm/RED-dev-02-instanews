@@ -52,10 +52,6 @@ body {
   font-size: 16px;
   background-color: #000; }
 
-.error {
-  color: #f00;
-  text-transform: uppercase; }
-
 header {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out; }
@@ -148,6 +144,22 @@ footer {
   text-align: center;
   min-height: 30px; }
 
+.error {
+  color: #f00;
+  text-transform: uppercase; }
+
+.indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
 article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,11 +217,11 @@ article a {
   padding-right: 8px;
   overflow: hidden;
   height: 0px;
-  -webkit-transition: height 1s;
-  transition: height 1s; }
+  -webkit-transition: height 1s cubic-bezier(0, 0.5, 0.5, 1);
+  transition: height 1s cubic-bezier(0, 0.5, 0.5, 1); }
 
 .toggle-height {
-  height: 33.34%; }
+  height: 50%; }
 
 .byline {
   font-size: .75rem; }
@@ -217,15 +229,3 @@ article a {
 h2 {
   font-weight: 300;
   font-size: 1.2rem; }
-
-.loading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100vw;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
