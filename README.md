@@ -6,7 +6,7 @@ RED Academy Web Development Project 02
 
 The following tasks represent areas of this project that could use further development
 
-### Incorporate a combination of jQuery and CSS3-based animation to animate the movement of the header on the <select> change
+### Animate the movement of the header on the <select> change
 
 I mean, in writing, this feature has been implemented. It just doesn't look very nice the way it seems to happen in two stages.
 
