@@ -48,7 +48,13 @@ for (n=0; n<numSections; n++) {
 	$('select').append('<option value="' + option + '">' + option + '</option>');
 }
 
+
+
 $('#selection').on('change', function() {
+	$('article').empty();
+	// Construct the loading spinner
+	var load = '<div class="loading"><img src="img/loading_trans_75px.gif" alt="Loading" /></div>';
+	$('article').append(load);
 	var selection = $('#selection').val(); // Get the user's section selection
 	selection = selection.replace(/\s+/g, ''); // Remove spaces so it'll work in the URL
 	var apiKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
