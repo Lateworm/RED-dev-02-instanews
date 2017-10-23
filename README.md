@@ -12,7 +12,7 @@ I mean, in writing, this feature has been implemented. It just doesn't look very
 
 ### Miscellaneous
 
-- Incorporate a <select> field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
+- Incorporate a selection field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
 - Re-export the loading spinner with anti-aliasing.
 - Switch to full Sass syntax.
 - restyle h2 and p.
