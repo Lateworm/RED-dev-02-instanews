@@ -18,7 +18,7 @@ I mean, in writing, this feature has been implemented. It just doesn't look very
 
 - Incorporate a selection field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
 - Re-export the loading spinner with anti-aliasing.
-- Stretch goal - Incorporate a <select> field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
+- Stretch goal - Incorporate a selection field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
 - Switch to full Sass syntax.
 - restyle h2 and p.
 - Try adding the p tags using .slideup()
