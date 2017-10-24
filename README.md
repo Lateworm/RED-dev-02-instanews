@@ -2,9 +2,13 @@
 
 RED Academy Web Development Project 02
 
+## About The Project
+
+As coursework for RED Academy's Web Development program, this project demonstrates skills in interacting with API's Javascript, jQuery, Ajax, and JSON. The website features content that is dynamically generated based on user interaction. Although not the emphasis of the project, it also demonstrates skills in laying out a UI using HTML and SCSS.
+
 ## Dev Tasks
 
-The following tasks represent areas of this project that could use further development
+The following outstanding tasks represent areas of this project that could use further development
 
 ### Animate the movement of the header on the <select> change
 
@@ -12,10 +16,11 @@ I mean, in writing, this feature has been implemented. It just doesn't look very
 
 ### Miscellaneous
 
-- Incorporate a <select> field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
 - Re-export the loading spinner with anti-aliasing.
+- Stretch goal - Incorporate a <select> field with custom styles applied (you will need a jQuery plugin for this such as Selectric).
 - Switch to full Sass syntax.
 - restyle h2 and p.
+- Try adding the p tags using .slideup()
 
 ## Project Notes
 
