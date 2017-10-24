@@ -41,14 +41,12 @@ form {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-label {
-	padding: 15px;
-}
-
-select {
-	text-transform: capitalize;
+	label {
+		padding: 15px;
+	}
+	select {
+		text-transform: capitalize;
+	}
 }
 
 footer {
@@ -66,18 +64,13 @@ footer {
 	}
 }
 
-
-
-.error {
-	color: #f00;
-	text-transform: uppercase;
-}
-
 .indicator {
 	display: flex;
 	width: 100vw;
 	justify-content: center;
 	align-items: center;
+	.error {
+		color: #f00;
+		text-transform: uppercase;
+	}
 }
-
-.error {}

@@ -37,7 +37,7 @@ article a {
 	background-color: rgba(0,0,0,0.7);
 	padding-left: 8px;
 	padding-right: 8px;
-	transition: height 1s cubic-bezier(0, 0.5, 0.5, 1);
+	// transition: height 1s cubic-bezier(0, 0.5, 0.5, 1); re-enable if using an animatable height value
 }
 
 .overlay p {
