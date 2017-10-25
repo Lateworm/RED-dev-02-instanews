@@ -129,12 +129,15 @@ form {
   form label {
     padding: 15px; }
   form select {
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    background-color: white; }
 
 footer {
   color: #c2c2c2;
   text-align: center;
   min-height: 30px; }
+  footer p {
+    text-align: center; }
   footer .uppercase {
     text-transform: uppercase; }
   @media (min-width: 1000px) {
