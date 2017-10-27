@@ -1,6 +1,7 @@
 # Instanews Web App
 
 RED Academy Web Development Project 02
+[View the project](https://lateworm.github.io/RED-dev-02-instanews/)
 
 ## About The Project
 
