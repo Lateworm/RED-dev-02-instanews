@@ -46,6 +46,7 @@ form {
 	}
 	select {
 		text-transform: capitalize;
+		background-color: white;
 	}
 }
 
@@ -53,6 +54,9 @@ footer {
 	color: #c2c2c2;
 	text-align: center;
 	min-height: 30px;
+	p{
+		text-align: center;
+	}
 	.uppercase {
 		text-transform: uppercase;
 	}

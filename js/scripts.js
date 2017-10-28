@@ -36,7 +36,7 @@ $(function() {
 	// Build the list of selectable sections
 	var numSections = sections.length;
 	// var n = 5;
-	for (n=0; n<numSections; n++) {
+	for (var n=0; n<numSections; n++) {
 		var option = sections[n];
 		$('select').append('<option value="' + option + '">' + option + '</option>');
 	}
@@ -86,7 +86,7 @@ $(function() {
 		selection = selection.replace(/\s+/g, ''); // Remove spaces so it'll work in the URL
 		var apiKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
 		var apiUrl = 'https://api.nytimes.com/svc/topstories/v2/' + selection + '.json?api-key=' + apiKey; // Build a keyed API URL for the selected section
-		console.log(apiUrl);
+		// console.log(apiUrl);
 
 		// Pull the API info
 
@@ -100,7 +100,6 @@ $(function() {
 
 			var anchorsAppended = 0;
 			$.each(data.results, function(each) {
-
 				var articleMediaLength = data.results[each].multimedia.length;
 				var articleMediaIndex = articleMediaLength - 1;
 				if (articleMediaLength === 0) {
