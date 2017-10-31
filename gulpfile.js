@@ -1,22 +1,18 @@
-var gulp = require('gulp');
+const gulp 			= require('gulp'),
 
-// Now that we've installed the uglify package we can require it:
-var uglify 			= require('gulp-uglify'),
+		babel 			= require('gulp-babel'), // transpile ES6 to ES5
+		uglify 			= require('gulp-uglify'), // minify JS
 		rename 			= require('gulp-rename'),
-		gulp   			= require('gulp'),
-		browserSync = require('browser-sync').create(),
 		eslint			= require('gulp-eslint'),
-		// Sass
-		sass 				= require('gulp-sass'),
+
+		sass 				= require('gulp-sass'), // compile SCSS files
     autoprefixer = require('gulp-autoprefixer'),
-		cssnano 		= require('gulp-cssnano'),
-		prettyError = require('gulp-prettyerror');
+		cssnano 		= require('gulp-cssnano'), // minify SSS
+		prettyError = require('gulp-prettyerror'),
+
+		browserSync = require('browser-sync').create(); // https://browsersync.io/docs/gulp/
 		
-gulp.task('watch', function() {					// watch for files that need to be built/compiled
-	 gulp.watch('js/*.js', ['buildScripts']);
-	 gulp.watch('sass/*.scss', ['sass']);
-});		
-	
+		
 gulp.task('lintScripts', function() {
 	return gulp.src(['./js/*.js','!node_modules/**'])
 		.pipe(eslint())
@@ -26,20 +22,10 @@ gulp.task('lintScripts', function() {
 
 gulp.task('buildScripts', ['lintScripts'], function(){
 	gulp.src('./js/*.js')
+		.pipe(babel())
     .pipe(uglify())
     .pipe(rename({ extname: '.min.js' }))
 		.pipe(gulp.dest('./build/js'))
-});
-	
-// https://browsersync.io/docs/gulp/
-gulp.task('browser-sync', function() {
-    browserSync.init({
-			server: {
-				baseDir: "./"
-				}
-			});
-		gulp.watch(['index.html', 'build/css/*.css', 'js/*.js'])
-		.on('change', browserSync.reload);
 });
 	
 gulp.task('sass', function() {
@@ -53,6 +39,21 @@ gulp.task('sass', function() {
       .pipe(cssnano())
       .pipe(rename('style.min.css'))
       .pipe(gulp.dest('./build/css')); // final production version
+});
+
+gulp.task('watch', function() {					// watch for files that need to be built/compiled
+	 gulp.watch('js/*.js', ['buildScripts']);
+	 gulp.watch('sass/*.scss', ['sass']);
+});	
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+			server: {
+				baseDir: "./"
+				}
+			});
+		gulp.watch(['index.html', 'build/css/*.css', 'js/*.js'])
+		.on('change', browserSync.reload);
 });
 	
 // Modify our default task method by passing an array of task names
