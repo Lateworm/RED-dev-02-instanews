@@ -11,14 +11,16 @@
 		"no-param-reassign": 1,
 		"no-unused-vars": 1,
 		"quotes": [ 1, "single"]
-
-  },
+	},
+	
   "globals": {
     "jQuery": false,
     "$": false
-
-  },
+	},
+	
   "env": {
-    "browser": true
-  }
+		"browser": true
+	},
+
+	"parser": "babel-eslint"
 }
