@@ -40,43 +40,6 @@ $(() => { //jQuery document ready function
 		$('select').append(`<option value="${option}">${option}</option>`);
 	}
 
-	// var sectionsExperimental = [ // check if this is proper object syntax
-	// 	{'section': 'home', 'visible': false,},
-	// 	{'section': 'arts', 'visible': false,},
-	// 	{'section': 'automobiles', 'visible': true,},
-	// 	{'section': 'books', 'visible': false,},
-	// 	{'section': 'business', 'visible': false,},
-	// 	{'section': 'fashion', 'visible': false,},
-	// 	{'section': 'food', 'visible': true,},
-	// 	{'section': 'health', 'visible': false,},
-	// 	{'section': 'insider', 'visible': false,},
-	// 	{'section': 'magazine', 'visible': false,},
-	// 	{'section': 'movies', 'visible': false,},
-	// 	{'section': 'national', 'visible': false,},
-	// 	{'section': 'ny region', 'visible': false,},
-	// 	{'section': 'obituaries', 'visible': false,},
-	// 	{'section': 'opinion', 'visible': false,},
-	// 	{'section': 'politics', 'visible': false,},
-	// 	{'section': 'real estate', 'visible': true,},
-	// 	{'section': 'science', 'visible': false,},
-	// 	{'section': 'sports', 'visible': false,},
-	// 	{'section': 'sunday review', 'visible': false,},
-	// 	{'section': 't magazine', 'visible': false,},
-	// 	{'section': 'technology', 'visible': true,},
-	// 	{'section': 'theater', 'visible': false,},
-	// 	{'section': 'travel', 'visible': false,},
-	// 	{'section': 'upshot', 'visible': false,},
-	// 	{'section': 'world', 'visible': true,},
-	// ];
-
-	// // Build the experimental list of selectable sections
-	// var numSections = experimentalSections.length;
-	// $.each(sectionsExperimental, function(each) {
-	// 	var section = sectionsExperimental[each].section;
-	// 	var visible = sectionsExperimental[each].visible;
-	// 	$('select').append('<option value="' + option + '">' + option + '</option>');
-	// }
-
 	$('#selection').on('change', () => {
 		// $('article').empty();
 		$('.loading').show();
