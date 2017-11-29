@@ -1,7 +1,3 @@
-$double-width: 400px;
-$tablet-width: 600px;
-$desktop-width: 1000px;
-
 @mixin double {
   @media (min-width: $double-width) {
     @content;
