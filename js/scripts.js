@@ -48,7 +48,6 @@ $(() => { //jQuery document ready function
 		selection = selection.replace(/\s+/g, ''); // Remove spaces so it'll work in the URL
 		const apiKey= '3d0a4529188c480899c9ae22d7122aae'; // API Key for Top Stories:
 		const apiUrl = `https://api.nytimes.com/svc/topstories/v2/${selection}.json?api-key=${apiKey}`; // Build a keyed API URL for the selected section
-		console.log(apiUrl);
 
 		// Pull the API info
 
