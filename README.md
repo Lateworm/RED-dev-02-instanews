@@ -7,7 +7,7 @@ This project is coursework for RED Academy's webdevelopment program.
 
 ### Screenshot
 
-![Instanews Project Screenshot](/insta-screenshot.gif?raw=true)
+![Instanews Project Screenshot](/insta-screenshot.jpg?raw=true)
 
 ## Skills Developed Through This project
 
