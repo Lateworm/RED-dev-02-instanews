@@ -3,7 +3,11 @@ RED Academy Web Development Project 02: - Instanews Web App
 [View the project](https://lateworm.github.io/RED-dev-02-instanews/)
 
 ## About The Project
-This project is coursework for RED Academy's Web Development program.
+This project is coursework for RED Academy's webdevelopment program.
+
+### Screenshot
+
+![Instanews Project Screenshot](/insta-screenshot.gif?raw=true)
 
 ## Skills Developed Through This project
 
